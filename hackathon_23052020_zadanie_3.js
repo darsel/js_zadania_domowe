@@ -178,9 +178,26 @@ const data = {
 function zwrocTempDnia (data) {
     const output = [];
     const list = data.list.forEach(element => {
+    if(element.temp.day){
         output.push(element.temp.day);
+    }
     });
-    
     return output;
 }
+const tempDniaTab = zwrocTempDnia(data);
 console.log(zwrocTempDnia(data));
+
+//ad. 2
+function zwrocTempDniaC(list) {
+    const output = list.map(item => (item - 273.15).toFixed(2));
+    return output;
+}
+console.log(zwrocTempDniaC(tempDniaTab));
+
+//ad. 3
+function zwrocNajwyzszeCisnienie (data) {
+    const output = '';
+    const listPressure = data.list.map(item => item.pressure || '');
+    return listPressure.reduce((prev, next) => Math.max(prev, next));
+}
+console.log(zwrocNajwyzszeCisnienie(data));
