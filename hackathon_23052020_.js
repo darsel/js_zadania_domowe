@@ -28,6 +28,7 @@ let nowaListaCen = listaCen(collection);
 console.log(nowaListaCen);
 
 //ad. 2
+
 function odwrocListe(lista) {
     return lista.reverse();
 }
