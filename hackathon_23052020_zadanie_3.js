@@ -196,7 +196,7 @@ console.log(zwrocTempDniaC(tempDniaTab));
 
 //ad. 3
 function zwrocNajwyzszeCisnienie (data) {
-    const output = '';
+    
     const listPressure = data.list.map(item => item.pressure || '');
     return listPressure.reduce((prev, next) => Math.max(prev, next));
 }

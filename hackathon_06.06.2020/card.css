@@ -1,0 +1,34 @@
+
+input {
+    
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+label {
+    width: 100px;
+    display: inline-block;
+    height: 20px;
+    padding: 5px;
+    /* border: 1px solid rgb(73, 0, 73); */
+    border-right: none;
+    text-align: right;
+}
+.btn {
+    display: block;
+    border: 1px solid rgb(73, 0, 73);
+    background-color: white;
+    padding: 5px 10px 5px 10px;
+    
+}
+.input {
+    padding: 5px;
+    border: 1px solid rgb(73, 0, 73);
+}
+.error {
+    display: inline-block;
+    position: absolute;
+    text-align: right;
+    color: red;
+    left: 120px;
+    font-size: small;
+}
