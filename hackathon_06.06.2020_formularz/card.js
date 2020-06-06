@@ -23,32 +23,33 @@ function createForm() {
   const form = document.createElement('form');
   form.innerHTML = `
   <div class="input-inline"><label for="nr_karty" >Numer karty </label>
-  <input type="number" class="input" id="nr_karty" name="numer_karty" value="" required>
+  <input type="number" class="input" id="nr_karty" name="numer_karty" value="" required />
   <span id="e_nr_karty" class="error"></span>
   </div>
   <div class="input-inline"><label for="miesiac_karty">Miesiąc </label>
-  <input type="number" min="01" max="12" step="1" class="input" id="miesiac_karty" name="miesiac_karty" value=""  required>
+  <input type="number" min="01" max="12" step="1" class="input" id="miesiac_karty" name="miesiac_karty" value=""  required />
   <span id="e_miesiac_karty" class="error"></span>
   </div>
   <div class="input-inline"><label for="rok_karty">Rok </label>
-  <input type="number" min="0" step="1" class="input" id="rok_karty" name="miesiac_karty" value=""  required>
+  <input type="number" min="0" step="1" class="input" id="rok_karty" name="rok_karty" value=""  required />
   <span id="e_rok_karty" class="error"></span>
   </div>
   <div class="input-inline"><label for="cvc_karty">Numer CVC </label>
-  <input type="number" class="input" id="cvc_karty" name="cvc_karty" value=""  required>
+  <input type="number" class="input" id="cvc_karty" name="cvc_karty" value=""  required />
   <span id="e_cvc_karty" class="error"></span>
   </div>
-  <input type="submit" class="btn" id="cvc_karty" name="cvc_karty" value="Wyślij"  required>
+  <input type="submit" class="btn" value="Wyślij"  required>
   `;
   const app = document.getElementById('app');
   app.appendChild(form);
   const date = new Date();
-  const inputNumerKarty = document.getElementById('nr_karty');
-  const inputCvcKarty = document.getElementById('cvc_karty');
-  const inputRokKarty = document.getElementById('rok_karty');
+  
+  const inputRokKarty = form.elements.rok_karty;
+  const inputMiesiacKarty = form.elements.miesiac_karty;
+  console.log(inputMiesiacKarty);
   inputRokKarty.min = date.getFullYear();
   
-  const inputMiesiacKarty = document.getElementById('miesiac_karty');
+  
   inputMiesiacKarty.addEventListener('focus', function() {
     if(inputRokKarty.value == date.getFullYear()) {
       inputMiesiacKarty.min = date.getMonth() + 1;
